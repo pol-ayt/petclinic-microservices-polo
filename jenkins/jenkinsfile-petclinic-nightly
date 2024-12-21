@@ -142,6 +142,11 @@ pipeline {
  }
 
     post {
+
+            timeout(time: 2, unit: "HOURS") {
+                input message: 'Approve Destroy?', ok: 'Yes'
+            }
+
         always {
             echo 'Deleting all local images'
             sh 'docker image prune -af'
