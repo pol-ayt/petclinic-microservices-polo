@@ -37,6 +37,7 @@ services:
   customers-service:
     image: petclinic-customers-service:dev
     container_name: customers-service
+    restart: on-failure:3
     deploy:
       resources:
         limits:
@@ -52,6 +53,7 @@ services:
   visits-service:
     image: petclinic-visits-service:dev
     container_name: visits-service
+    restart: on-failure:3
     deploy:
       resources:
         limits:
@@ -67,6 +69,7 @@ services:
   vets-service:
     image: petclinic-vets-service:dev
     container_name: vets-service
+    restart: on-failure:3
     deploy:
       resources:
         limits:
@@ -124,7 +127,7 @@ services:
   ## Grafana / Prometheus
 
   grafana-server:
-    build: ./docker/grafana
+    image: petclinic-grafana-server:dev
     container_name: grafana-server
     deploy:
       resources:
@@ -134,7 +137,7 @@ services:
     - 3000:3000
 
   prometheus-server:
-    build: ./docker/prometheus
+    image: petclinic-prometheus-server:dev
     container_name: prometheus-server
     deploy:
       resources:
@@ -142,6 +145,8 @@ services:
           memory: 256M
     ports:
     - 9091:9090
+
+  ## Mysql
 
   mysql-server:
     image: mysql:8.0.0

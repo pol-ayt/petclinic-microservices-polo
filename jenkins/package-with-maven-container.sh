@@ -1,1 +1,1 @@
-docker run --rm -v $HOME/.m2:/root/.m2 -v $WORKSPACE:/app -w /app maven:3.9-eclipse-temurin-17 mvn clean package
+docker run --rm -v $HOME/.m2:/root/.m2 -v $WORKSPACE:/app -w /app maven:3.9-amazoncorretto-17-al2023 mvn clean package
