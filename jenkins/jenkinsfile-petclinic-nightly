@@ -150,6 +150,7 @@ pipeline {
             sh 'sleep 600'
             sh 'sleep 600'
             sh 'sleep 600'
+            sh 'sleep 600'
             sh 'docker image prune -af'
             echo 'Delete the Image Repository on ECR'
             sh """
