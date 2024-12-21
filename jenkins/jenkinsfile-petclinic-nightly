@@ -142,13 +142,14 @@ pipeline {
  }
 
     post {
-
-            timeout(time: 2, unit: "HOURS") {
-                input message: 'Approve Destroy?'
-            }
-
+        
         always {
             echo 'Deleting all local images'
+            sh 'sleep 600'
+            sh 'sleep 600'
+            sh 'sleep 600'
+            sh 'sleep 600'
+            sh 'sleep 600'
             sh 'docker image prune -af'
             echo 'Delete the Image Repository on ECR'
             sh """
