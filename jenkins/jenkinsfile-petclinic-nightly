@@ -144,7 +144,7 @@ pipeline {
     post {
 
             timeout(time: 2, unit: "HOURS") {
-                input message: 'Approve Destroy?', ok: 'Yes'
+                input message: 'Approve Destroy?'
             }
 
         always {
