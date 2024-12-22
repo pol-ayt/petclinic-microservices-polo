@@ -149,7 +149,7 @@ services:
   ## Mysql
 
   mysql-server:
-    image: mysql:8.0.0
+    image: mysql:5.7
     container_name: mysql-server
     environment: 
       MYSQL_ROOT_PASSWORD: petclinic
